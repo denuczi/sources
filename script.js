@@ -122,3 +122,33 @@ botonMutear.addEventListener("click", () => {
 volumen.addEventListener("input", () => {
   audio.volume = volumen.value;
 });
+
+ /* Modifica el fondo del body después de cargar todo el contenido
+        window.addEventListener('load', () => {
+            document.body.style.backgroundImage = "url('https://sun9-57.userapi.com/impg/ist1iX2rurzGTY4pKg_3AYQFTPkc5XzO4jK_4Q/kSxzGIjQD9o.jpg?size=1892x1080&quality=96&sign=db80ae3aa398349e8fb5b7492b3d3d25&type=album')";
+            document.body.style.backgroundSize = "cover";
+            document.body.style.backgroundAttachment = "fixed";
+            document.body.style.backgroundPosition="center";
+        });*/
+        
+        
+        document.querySelector('.reproducir').addEventListener('click', () => {
+    const img = document.querySelector('#cuerpodos');
+    const yb = document.querySelector('#youtube');
+    const video = document.querySelector('#youtube video'); // Selecciona el video dentro de #youtube.
+    const button = document.querySelector('.reproducir'); // Selecciona el botón.
+
+    // Verificar el estado actual y alternar entre mostrar y ocultar
+    if (yb.style.display === "none" || yb.style.display === "") {
+        img.style.display = "none"; // Ocultar la imagen
+        yb.style.display = "block"; // Mostrar el div con videos
+        video.play(); // Reproducir el video.
+        button.textContent = "Salir"; // Cambiar el texto del botón a "Salir"
+    } else {
+        img.style.display = "block"; // Mostrar la imagen
+        yb.style.display = "none";  // Ocultar el div con videos
+        video.pause(); // Pausar el video.
+        button.textContent = "Mis Videos"; // Cambiar el texto del botón a "Mis Videos"
+    }
+});
+
